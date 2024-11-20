@@ -1,0 +1,13 @@
+interface FormSchema {
+  formTitle: string;
+  formDescription: string;
+  fields: Array<{
+    id: string;
+    type: 'text' | 'email' | 'select' | 'radio' | 'textarea';
+    label: string;
+    required: boolean;
+    placeholder?: string;
+    options?: Array<{ value: string; label: string }>;
+    validation?: { pattern: string; message: string };
+  }>;
+}
