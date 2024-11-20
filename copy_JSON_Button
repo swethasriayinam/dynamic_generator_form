@@ -1,0 +1,19 @@
+import React from 'react';
+
+const CopyJSONButton: React.FC<{ json: any }> = ({ json }) => {
+  const handleCopy = () => {
+    navigator.clipboard.writeText(JSON.stringify(json, null, 2));
+    alert('JSON copied to clipboard!');
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="py-2 px-4 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
+    >
+      Copy Form JSON
+    </button>
+  );
+};
+
+export default CopyJSONButton;
